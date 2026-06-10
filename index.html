@@ -5,35 +5,130 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <title>Cubelines プライバシーポリシー</title>
 <style>
-  :root { color-scheme: light dark; }
+  :root {
+    --bg: #14162a;
+    --surface: #1e2138;
+    --surface2: #262a44;
+    --text: #e8e9f3;
+    --muted: #9aa0c0;
+    --link: #6db3ff;
+    --indigo: #5c6bc0;
+    --c-red: #ef5350;
+    --c-orange: #ffa726;
+    --c-yellow: #ffd54f;
+    --c-green: #66bb6a;
+    --c-blue: #42a5f5;
+    --c-purple: #ab47bc;
+    --c-cyan: #26c6da;
+  }
+  * { box-sizing: border-box; }
   body {
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Hiragino Kaku Gothic ProN",
-      "Yu Gothic", Meiryo, sans-serif;
-    line-height: 1.8; max-width: 760px; margin: 0 auto; padding: 24px 18px 64px;
-    color: #1d1d1f; background: #ffffff;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI",
+      "Hiragino Kaku Gothic ProN", "Yu Gothic", Meiryo, sans-serif;
+    line-height: 1.85;
+    margin: 0;
+    color: var(--text);
+    background:
+      radial-gradient(1200px 500px at 50% -10%, #20254a 0%, rgba(32,37,74,0) 60%),
+      var(--bg);
+    background-attachment: fixed;
   }
-  @media (prefers-color-scheme: dark) {
-    body { color: #e6e6e6; background: #14162a; }
-    a { color: #6db3ff; }
-    code { background: #2a2d43; }
+  .wrap { max-width: 760px; margin: 0 auto; padding: 0 18px 72px; }
+
+  /* ── ヘッダー ── */
+  header { text-align: center; padding: 56px 0 28px; }
+  .logo {
+    display: inline-grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 8px;
+    margin-bottom: 18px;
   }
-  h1 { font-size: 1.6rem; border-bottom: 2px solid #5c6bc0; padding-bottom: 8px; }
-  h2 { font-size: 1.2rem; margin-top: 2em; }
-  .meta { color: #666; font-size: 0.9rem; }
-  ul { padding-left: 1.3em; }
-  code { background: #f0f0f3; padding: 1px 5px; border-radius: 4px; font-size: 0.9em; }
-  .note { font-size: 0.85rem; color: #888; margin-top: 3em; border-top: 1px solid #ccc; padding-top: 12px; }
+  .blk {
+    width: 34px; height: 34px; border-radius: 9px;
+    box-shadow: 0 4px 10px rgba(0,0,0,.35);
+    position: relative;
+  }
+  .blk::after {
+    content: ""; position: absolute; inset: 4px 6px auto 6px; height: 26%;
+    border-radius: 6px; background: rgba(255,255,255,.28);
+  }
+  .b1{background:linear-gradient(145deg,#ff8a87,var(--c-red) 55%,#b53b39);}
+  .b2{background:linear-gradient(145deg,#ffc473,var(--c-orange) 55%,#c97d18);}
+  .b3{background:linear-gradient(145deg,#ffe79a,var(--c-yellow) 55%,#c9a73c);}
+  .b4{background:linear-gradient(145deg,#92d595,var(--c-green) 55%,#4c8e4f);}
+  .b5{background:linear-gradient(145deg,#86c5fa,var(--c-blue) 55%,#2f76b4);}
+  .b6{background:linear-gradient(145deg,#cf8fdb,var(--c-purple) 55%,#7d3491);}
+  .b7{background:linear-gradient(145deg,#7fe0ed,var(--c-cyan) 55%,#1a8d9c);}
+  h1 {
+    font-size: 2rem; font-weight: 900; letter-spacing: 3px; margin: 0;
+    background: linear-gradient(90deg,#9db4ff,#fff 50%,#9db4ff);
+    -webkit-background-clip: text; background-clip: text; color: transparent;
+    text-shadow: 0 0 24px rgba(66,165,245,.35);
+  }
+  .subtitle { color: var(--muted); margin: 6px 0 0; letter-spacing: 1px; }
+  .meta { color: var(--muted); font-size: .9rem; margin-top: 14px; }
+  .rainbow {
+    height: 5px; border-radius: 3px; margin: 22px auto 0; max-width: 420px;
+    background: linear-gradient(90deg,
+      var(--c-red),var(--c-orange),var(--c-yellow),var(--c-green),
+      var(--c-blue),var(--c-purple),var(--c-cyan));
+  }
+
+  /* ── 本文 ── */
+  .intro {
+    background: var(--surface); border-radius: 14px; padding: 18px 20px;
+    margin-top: 8px;
+  }
+  h2 {
+    font-size: 1.18rem; margin: 2.2em 0 .6em; padding-left: 14px;
+    border-left: 5px solid var(--indigo);
+  }
+  h2:nth-of-type(7n+1){ border-color: var(--c-red); }
+  h2:nth-of-type(7n+2){ border-color: var(--c-orange); }
+  h2:nth-of-type(7n+3){ border-color: var(--c-yellow); }
+  h2:nth-of-type(7n+4){ border-color: var(--c-green); }
+  h2:nth-of-type(7n+5){ border-color: var(--c-blue); }
+  h2:nth-of-type(7n+6){ border-color: var(--c-purple); }
+  h2:nth-of-type(7n+7){ border-color: var(--c-cyan); }
+  a { color: var(--link); text-decoration: none; }
+  a:hover { text-decoration: underline; }
+  ul { padding-left: 1.25em; }
+  li { margin: .3em 0; }
+  code, .chip {
+    background: var(--surface2); padding: 2px 8px; border-radius: 6px;
+    font-size: .92em; color: #c8d2ff;
+  }
+  .note {
+    font-size: .85rem; color: var(--muted); margin-top: 3em;
+    border-top: 1px solid #34385a; padding-top: 14px;
+  }
+  footer { text-align: center; color: var(--muted); font-size: .8rem; margin-top: 40px; }
+  .lang { text-align: right; padding-top: 14px; font-size: .85rem; }
+  .lang a { color: var(--muted); }
+  .lang a.active { color: var(--text); font-weight: 700; text-decoration: none; }
 </style>
 </head>
 <body>
+<div class="wrap">
 
-<h1>プライバシーポリシー（Cubelines）</h1>
-<p class="meta">最終更新日: [YYYY年M月D日]</p>
+<nav class="lang"><a class="active" href="./">日本語</a> ・ <a href="./en/">English</a></nav>
 
-<p>
-[開発者名／屋号]（以下「当方」）は、モバイルゲーム「<strong>Cubelines</strong>」（以下「本アプリ」）に
-おけるユーザー情報の取り扱いについて、本プライバシーポリシー（以下「本ポリシー」）を定めます。
-本アプリをご利用いただく前に、本ポリシーをお読みください。
+<header>
+  <div class="logo" aria-hidden="true">
+    <span class="blk b1"></span><span class="blk b2"></span><span class="blk b3"></span>
+    <span class="blk b5"></span><span class="blk b4"></span><span class="blk b6"></span>
+    <span class="blk b7"></span><span class="blk b3"></span><span class="blk b1"></span>
+  </div>
+  <h1>CUBELINES</h1>
+  <p class="subtitle">プライバシーポリシー</p>
+  <p class="meta">最終更新日: 2026年6月10日</p>
+  <div class="rainbow"></div>
+</header>
+
+<p class="intro">
+  DomGrp（以下「当方」）は、モバイルゲーム「<strong>Cubelines</strong>」（以下「本アプリ」）における
+  ユーザー情報の取り扱いについて、本プライバシーポリシー（以下「本ポリシー」）を定めます。
+  本アプリをご利用いただく前に、本ポリシーをお読みください。
 </p>
 
 <h2>1. 取得する情報</h2>
@@ -98,12 +193,15 @@
 
 <h2>9. お問い合わせ</h2>
 <p>本ポリシーまたは情報の取り扱いに関するお問い合わせは、以下までご連絡ください。</p>
-<p>連絡先メールアドレス: <code>[連絡先メールアドレス]</code></p>
+<p>連絡先メールアドレス: <a class="chip" href="mailto:support@dom-grp.com">support@dom-grp.com</a></p>
 
 <p class="note">
-※ 本文書はテンプレートです。実際の配信内容・取得情報に合わせて内容をご確認・調整のうえ、
-必要に応じて専門家の確認を受けてください。本テンプレートは法的助言ではありません。
+※ 本文書は実際の配信内容・取得情報に合わせて内容をご確認・調整のうえご利用ください。本テンプレートは
+法的助言ではありません。
 </p>
 
+<footer>© 2026 DomGrp · Cubelines</footer>
+
+</div>
 </body>
 </html>
